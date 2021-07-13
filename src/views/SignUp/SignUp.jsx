@@ -12,10 +12,11 @@ const SignUp = (props) => {
     name: "",
     surname: "",
     email: "",
+    password: "",
     dateOfBirth: "",
     avatar: "",
   });
-  const { avatar, setAvatarFormData } = useState("");
+  const [avatar, setAvatarFormData] = useState("");
 
   useEffect(() => {
     console.log(localStorage.getItem("id"));
@@ -70,6 +71,15 @@ const SignUp = (props) => {
                   We'll never share your email with anyone else.
                 </Form.Text>
               </Form.Group>
+              <Form.Group controlId='password'>
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type='password'
+                  placeholder='Password'
+                  onChange={(e) => handleInputChange(e)}
+                  value={user.password}
+                />
+              </Form.Group>
               <Form.Group controlId='name'>
                 <Form.Label>Name</Form.Label>
                 <Form.Control
@@ -120,8 +130,14 @@ const SignUp = (props) => {
                 className='mt-2'
                 type='submit'
                 onClick={(e) => postUser(e)}>
-                SignUp
+                Sign up
               </Button>
+              <a
+                variant='primary'
+                className='btn  btn-primary mt-2 mx-2'
+                href='/login'>
+                Log in
+              </a>
             </Form>
           </Col>
         </Row>

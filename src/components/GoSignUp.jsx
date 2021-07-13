@@ -14,7 +14,7 @@ const GoSignUp = () => {
         <Row>
           <Col>
             <Nav.Link as={Link} to='/signUp'>
-              Please signUp
+              Please Sign Up or Login
             </Nav.Link>
           </Col>
         </Row>

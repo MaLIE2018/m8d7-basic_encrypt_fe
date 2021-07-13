@@ -9,6 +9,7 @@ import SignUp from "./views/SignUp/SignUp";
 import { Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import GoSignUp from "./components/GoSignUp";
+import Login from "./views/Login/Login";
 
 
 // const Router =
@@ -36,6 +37,7 @@ function App(props) {
     <>
         <NavBar onChangeHandle={handleChange} query={query} isLogged ={logged}/>
         <Route path={["/signUp"]} exact render={(state) =><SignUp/>} />
+        <Route path={["/login"]} exact render={(state) =><Login/>} />
         {logged?(<><Route path="/blogPosts" component={Home}/>
         <Route path="/" exact component={Home} />
         <Route path="/blog/:id" exact component={Blog} />

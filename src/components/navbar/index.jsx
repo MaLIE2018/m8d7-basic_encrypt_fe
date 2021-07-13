@@ -48,6 +48,14 @@ class NavBar extends Component {
                 </svg>
                 Post Article
               </Button>
+              <Button
+                size='lg'
+                onClick={() => {
+                  localStorage.removeItem("authorId");
+                  this.props.history.push("/login");
+                }}>
+                Log out
+              </Button>
             </>
           ) : null}
         </Container>
